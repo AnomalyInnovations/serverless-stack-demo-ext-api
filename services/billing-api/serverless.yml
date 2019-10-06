@@ -22,9 +22,9 @@ provider:
 
   apiGateway:
     restApiId:
-      'Fn::ImportValue': ${self:custom.stage}-ApiGatewayRestApiId
+      'Fn::ImportValue': ${self:custom.stage}-ExtApiGatewayRestApiId
     restApiRootResourceId:
-      'Fn::ImportValue': ${self:custom.stage}-ApiGatewayRestApiRootResourceId
+      'Fn::ImportValue': ${self:custom.stage}-ExtApiGatewayRestApiRootResourceId
 
   # These environment variables are made available to our functions
   # under process.env.
@@ -79,5 +79,5 @@ resources:
       Value:
         Ref: NotePurchasedTopic
       Export:
-        Name: NotePurchasedTopicArn-${self:custom.stage}
+        Name: ExtNotePurchasedTopicArn-${self:custom.stage}
 

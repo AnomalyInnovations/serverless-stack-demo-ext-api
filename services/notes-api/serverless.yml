@@ -40,7 +40,7 @@ provider:
       # Restrict our IAM role permissions to
       # the specific table for the stage
       Resource:
-        - 'Fn::ImportValue': ${self:custom.stage}-NotesTableArn
+        - 'Fn::ImportValue': ${self:custom.stage}-ExtNotesTableArn
 
 functions:
   # Defines an HTTP API endpoint that calls the main function in create.js
@@ -117,7 +117,7 @@ resources:
         Value:
           Ref: ApiGatewayRestApi
         Export:
-          Name: ${self:custom.stage}-ApiGatewayRestApiId
+          Name: ${self:custom.stage}-ExtApiGatewayRestApiId
     
       ApiGatewayRestApiRootResourceId:
         Value:
@@ -125,5 +125,5 @@ resources:
             - ApiGatewayRestApi
             - RootResourceId 
         Export:
-          Name: ${self:custom.stage}-ApiGatewayRestApiRootResourceId
+          Name: ${self:custom.stage}-ExtApiGatewayRestApiRootResourceId
 
