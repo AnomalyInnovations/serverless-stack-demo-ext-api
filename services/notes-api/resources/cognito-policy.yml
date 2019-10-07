@@ -21,5 +21,5 @@ Resources:
                   - Ref: ApiGatewayRestApi
                   - '/*'
       Roles:
-        - 'Fn::ImportValue': CognitoAuthRole-${self:custom.stage}
+        - 'Fn::ImportValue': ExtCognitoAuthRole-${self:custom.stage}
 
