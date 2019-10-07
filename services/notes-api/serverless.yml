@@ -8,6 +8,10 @@ custom:
   # Our stage is based on what is passed in when running serverless
   # commands. Or fallsback to what we have set in the provider section.
   stage: ${opt:stage, self:provider.stage}
+  resourcesStages:
+    prod: prod
+    dev: dev
+  resourcesStage: ${self:custom.resourcesStages.${self:custom.stage}, self:custom.resourcesStages.dev}
 
 package:
   individually: true
@@ -40,7 +44,7 @@ provider:
       # Restrict our IAM role permissions to
       # the specific table for the stage
       Resource:
-        - 'Fn::ImportValue': ${self:custom.stage}-ExtNotesTableArn
+        - 'Fn::ImportValue': ${self:custom.resourcesStage}-ExtNotesTableArn
 
 functions:
   # Defines an HTTP API endpoint that calls the main function in create.js
