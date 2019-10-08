@@ -27,7 +27,7 @@ provider:
   # under process.env.
   environment:
     stage: ${self:custom.stage}
-    resourcesStage: ${self:custom.stage}
+    resourcesStage: ${self:custom.resourcesStage}
     notePurchasedTopicArn:
       Ref: NotePurchasedTopic
 

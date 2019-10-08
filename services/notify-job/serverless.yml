@@ -15,7 +15,7 @@ provider:
   region: us-east-1
   environment:
     stage: ${self:custom.stage}
-    resourcesStage: ${self:custom.stage}
+    resourcesStage: ${self:custom.resourcesStage}
   tracing:
     lambda: true
 

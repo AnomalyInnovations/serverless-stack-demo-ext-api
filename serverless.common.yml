@@ -1,10 +1,3 @@
-lambdaPolicyXRay:
-  Effect: Allow
-  Action:
-    - xray:PutTraceSegments
-    - xray:PutTelemetryRecords
-  Resource: "*"
-
 custom:
   # Our stage is based on what is passed in when running serverless
   # commands. Or fallsback to what we have set in the provider section.
@@ -13,3 +6,10 @@ custom:
     prod: prod
     dev: dev
   resourcesStage: ${self:custom.resourcesStages.${self:custom.stage}, self:custom.resourcesStages.dev}
+
+lambdaPolicyXRay:
+  Effect: Allow
+  Action:
+    - xray:PutTraceSegments
+    - xray:PutTelemetryRecords
+  Resource: "*"
