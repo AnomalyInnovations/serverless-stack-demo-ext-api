@@ -1,18 +1,8 @@
-# Serverless Stack Mono-Repo Backend API
+# Serverless Stack Extended Backend API
 
 [Serverless Stack](https://serverless-stack.com) is a free comprehensive guide to creating full-stack serverless applications. We create a [note taking app](https://demo2.serverless-stack.com) from scratch.
 
-This repo is a sample mono-repo multi-service Serverless application with AWS CloudFormation cross-stack references. The steps to creating this are outlined in the [Serverless architecture section](http://serverless-stack.com/#extra-sls-architecture) of the Serverless Stack guide.
-
-### Steps
-
-In this section of the guide we look at how to:
-
-- [Link multiple Serverless services using CloudFormation cross-stack references](https://serverless-stack.com/chapters/cross-stack-references-in-serverless.html)
-- [Create our DynamoDB table as a Serverless service](https://serverless-stack.com/chapters/dynamodb-as-a-serverless-service.html)
-- [Create an S3 bucket as a Serverless service](https://serverless-stack.com/chapters/s3-as-a-serverless-service.html)
-- [Use the same API Gateway domain and resources across multiple Serverless services](https://serverless-stack.com/chapters/api-gateway-domains-across-services.html)
-- [Create a Serverless service for Cognito to authenticate and authorize our users](https://serverless-stack.com/chapters/cognito-as-a-serverless-service.html)
+This repo is used in the [Best Practices section](https://serverless-stack.com/chapters/best-practices-for-building-serverless-apps.html) of the guide.
 
 #### Usage
 
@@ -36,13 +26,7 @@ And run this to deploy to your AWS account.
 $ serverless deploy
 ```
 
-The services have some dependencies and need to be deployed in the following order:
-
-1. `database`
-2. `uploads`
-3. `notes`
-4. `users`
-5. `auth`
+The services are dependent on the resources that are created [in this accompanying repo](https://github.com/AnomalyInnovations/serverless-stack-demo-ext-resources).
 
 #### Maintainers
 
