@@ -1,4 +1,4 @@
-import AWS from "../../libs/aws-sdk";
+jmport AWS from "../../libs/aws-sdk";
 import stripePackage from "stripe";
 import { calculateCost } from "./libs/billing-lib";
 import { success, failure } from "../../libs/response-lib";
@@ -38,7 +38,7 @@ export async function main(event, context) {
     .publish({
       Message: JSON.stringify({ amount, description }),
       MessageStructure: "string",
-      TopicArn: `note-purchased-${config.stage}`,
+      TopicArn: process.env.notePurchasedTopicArn,
     })
     .promise();
 
