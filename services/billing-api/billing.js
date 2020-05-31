@@ -38,7 +38,7 @@ export async function main(event, context) {
     .publish({
       Message: JSON.stringify({ amount, description }),
       MessageStructure: "string",
-      TopicArn: `note-purchased-${config.stage}`,
+      TopicArn: process.env.notePurchasedTopicArn,
     })
     .promise();
 
