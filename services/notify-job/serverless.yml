@@ -32,5 +32,5 @@ functions:
     handler: notify.main
     events:
       - sns:
-        'Fn::ImportValue': ${self:custom.stage}-ExtNotePurchasedTopicArn
+        arn: !ImportValue ${self:custom.stage}-ExtNotePurchasedTopicArn
 
