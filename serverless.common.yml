@@ -6,7 +6,7 @@ custom:
     prod: prod
     dev: dev
     sst: sst
-  sstApp: ${self:custom.sstAppMapping.${self:custom.stage}, self:custom.sstAppMapping.dev}
+  sstApp: ${self:custom.sstAppMapping.${self:custom.stage}, self:custom.sstAppMapping.dev}-notes-ext-infra
 
 lambdaPolicyXRay:
   Effect: Allow
