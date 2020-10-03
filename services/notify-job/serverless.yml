@@ -16,7 +16,6 @@ provider:
   region: us-east-1
   environment:
     stage: ${self:custom.stage}
-    sstApp: ${self:custom.sstApp}
   tracing:
     lambda: true
 

@@ -23,7 +23,7 @@ provider:
   # under process.env.
   environment:
     stage: ${self:custom.stage}
-    sstApp: ${self:custom.sstApp}
+    tableName: !ImportValue ${self:custom.sstApp}-ExtTableName
 
   iamRoleStatements:
     - ${file(../../serverless.common.yml):lambdaPolicyXRay}

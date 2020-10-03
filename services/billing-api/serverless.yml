@@ -26,7 +26,6 @@ provider:
   # under process.env.
   environment:
     stage: ${self:custom.stage}
-    sstApp: ${self:custom.sstApp}
     notePurchasedTopicArn:
       Ref: NotePurchasedTopic
 
