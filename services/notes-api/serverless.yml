@@ -39,7 +39,7 @@ provider:
       # Restrict our IAM role permissions to
       # the specific table for the stage
       Resource:
-        - !ImportValue '${self:custom.sstApp}-ExtTableArn'
+        - !ImportValue ${self:custom.sstApp}-notes-ext-infra-ExtTableArn
 
 functions:
   # Defines an HTTP API endpoint that calls the main function in create.js
