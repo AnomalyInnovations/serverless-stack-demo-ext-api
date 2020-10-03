@@ -1,4 +1,4 @@
-import * as dynamoDbLib from "../../libs/dynamodb-lib";
+import dynamoDb from "../../libs/dynamodb-lib";
 import { success, failure } from "../../libs/response-lib";
 
 export async function main(event, context) {
@@ -26,7 +26,7 @@ export async function main(event, context) {
   };
 
   try {
-    await dynamoDbLib.call("update", params);
+    await dynamoDb.update(params);
     return success({ status: true });
   } catch (e) {
     return failure({ status: false });
