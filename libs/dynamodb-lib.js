@@ -7,6 +7,6 @@ export function call(action, params) {
   // Parameterize table names with stage name
   return dynamoDb[action]({
     ...params,
-    TableName: `${config.resourcesStage}-${params.TableName}`
+    TableName: `${config.sstApp}-${params.TableName}`
   }).promise();
 }

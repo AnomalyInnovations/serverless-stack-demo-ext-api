@@ -15,7 +15,7 @@ provider:
   region: us-east-1
   environment:
     stage: ${self:custom.stage}
-    resourcesStage: ${self:custom.resourcesStage}
+    sstApp: ${self:custom.sstApp}
   tracing:
     lambda: true
 
@@ -30,6 +30,5 @@ functions:
   notify:
     handler: notify.main
     events:
-      - sns:
-        'Fn::ImportValue': ExtNotePurchasedTopicArn-${self:custom.stage}
+      - sns: !ImportValue' '${self:custom.stage}-ExtNotePurchasedTopicArn'
 
