@@ -1,4 +1,5 @@
 service: notes-app-ext-notify-job
+frameworkVersion: ">=2.3.0"
 
 plugins:
   - serverless-bundle
@@ -30,5 +31,5 @@ functions:
   notify:
     handler: notify.main
     events:
-      - sns: !ImportValue' '${self:custom.stage}-ExtNotePurchasedTopicArn'
+      - sns: !ImportValue' ${self:custom.stage}-ExtNotePurchasedTopicArn
 

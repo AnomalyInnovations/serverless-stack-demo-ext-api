@@ -1,4 +1,5 @@
 service: notes-app-ext-notes-api
+frameworkVersion: ">=2.3.0"
 
 plugins:
   - serverless-bundle

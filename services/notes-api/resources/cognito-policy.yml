@@ -12,5 +12,5 @@ Resources:
             Resource:
               !Sub 'arn:aws:execute-api:${AWS::Region}:${AWS::AccountId}:${ApiGatewayRestApi}/*'
       Roles:
-        - !ImportValue '${self:custom.sstApp}-ExtCognitoAuthRole'
+        - !ImportValue ${self:custom.sstApp}-ExtCognitoAuthRole
 
