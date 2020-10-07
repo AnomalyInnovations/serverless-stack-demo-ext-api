@@ -1,5 +1,4 @@
 service: notes-app-ext-notify-job
-frameworkVersion: ">=2.3.0"
 
 plugins:
   - serverless-bundle
@@ -11,7 +10,7 @@ package:
 
 provider:
   name: aws
-  runtime: nodejs10.x
+  runtime: nodejs12.x
   stage: dev
   region: us-east-1
   environment:
