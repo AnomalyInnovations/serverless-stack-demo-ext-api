@@ -7,7 +7,7 @@
     "aws-xray-sdk": "^2.3.6"
   },
   "devDependencies": {
-    "aws-sdk": "^2.541.0",
+    "aws-sdk": "^2.814.0",
     "serverless-bundle": "^1.2.5",
     "serverless-offline": "^5.12.0"
   },
